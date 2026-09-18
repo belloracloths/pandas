@@ -21,9 +21,15 @@ export async function POST(req) {
 
         if (admin && (await admin.matchPassword(password))) {
             const token = generateToken(admin._id);
-            
-            // Set JWT in HTTP-Only Cookie
-            cookies().set({
+
+            const response = NextResponse.json({
+                _id: admin._id,
+                username: admin.username,
+                token: token,
+            });
+
+            // Set JWT in HTTP-Only Cookie using NextResponse
+            response.cookies.set({
                 name: 'adminToken',
                 value: token,
                 httpOnly: true,
@@ -31,12 +37,7 @@ export async function POST(req) {
                 maxAge: 30 * 24 * 60 * 60, // 30 days
             });
 
-            return NextResponse.json({
-                _id: admin._id,
-                username: admin.username,
-                // Still return it for client-side storage if needed, though cookie is preferred
-                token: token,
-            });
+            return response;
         } else {
             return NextResponse.json({ message: 'Invalid username or password' }, { status: 401 });
         }
