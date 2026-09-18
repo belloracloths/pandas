@@ -9,7 +9,7 @@ export async function PUT(req, { params }) {
         await requireAuth();
         await dbConnect();
         
-        const { id } = params;
+        const { id } = await params;
         const formData = await req.formData();
         const data = Object.fromEntries(formData.entries());
         
@@ -21,7 +21,7 @@ export async function PUT(req, { params }) {
         if (file && file.size > 0) {
             const buffer = Buffer.from(await file.arrayBuffer());
             data.imageUrl = await uploadToCloudinary(buffer);
-            if (existingItem.image) await deleteFromCloudinary(existingItem.image);
+            if (existingitem.imageUrlUrl) await deleteFromCloudinary(existingitem.imageUrlUrl);
         } else if (typeof file === 'string') {
             data.imageUrl = file;
         }
@@ -38,13 +38,13 @@ export async function DELETE(req, { params }) {
         await requireAuth();
         await dbConnect();
         
-        const { id } = params;
+        const { id } = await params;
         const item = await Offer.findById(id);
         
         if (!item) return NextResponse.json({ message: 'Not found' }, { status: 404 });
         
-        if (item.image) {
-            await deleteFromCloudinary(item.image);
+        if (item.imageUrl) {
+            await deleteFromCloudinary(item.imageUrl);
         }
         
         await Offer.findByIdAndDelete(id);
