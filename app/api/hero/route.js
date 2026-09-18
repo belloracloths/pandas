@@ -26,16 +26,17 @@ export async function POST(req) {
         const file = formData.get('image');
         if (file && file.size > 0) {
             const buffer = Buffer.from(await file.arrayBuffer());
-            data.image = await uploadToCloudinary(buffer);
+            data.imageUrl = await uploadToCloudinary(buffer);
         } else {
             // Check if there is an image URL already passed as string
-            if(typeof file === 'string') data.image = file;
+            if(typeof file === 'string') data.imageUrl = file;
         }
 
         const newItem = new HeroSlide(data);
         const savedItem = await newItem.save();
         return NextResponse.json(savedItem, { status: 201 });
     } catch (err) {
+        console.error("HERO POST ERROR:", err);
         return NextResponse.json({ message: err.message }, { status: 500 });
     }
 }

@@ -20,10 +20,10 @@ export async function PUT(req, { params }) {
         const file = formData.get('image');
         if (file && file.size > 0) {
             const buffer = Buffer.from(await file.arrayBuffer());
-            data.image = await uploadToCloudinary(buffer);
+            data.imageUrl = await uploadToCloudinary(buffer);
             if (existingItem.image) await deleteFromCloudinary(existingItem.image);
         } else if (typeof file === 'string') {
-            data.image = file;
+            data.imageUrl = file;
         }
 
         const updatedItem = await ExtraItem.findByIdAndUpdate(id, data, { new: true });
