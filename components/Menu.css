@@ -1,0 +1,213 @@
+.menu-section {
+    padding: 80px 0;
+    background: #FAFAF8;
+}
+
+.menu-section .section-title {
+    font-size: 2.2rem;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.menu-section .section-subtitle {
+    color: #888;
+    margin-bottom: 40px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Category Tabs */
+.category-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 50px;
+}
+
+.category-btn {
+    background: transparent;
+    border: 1.5px solid #e0dbd0;
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #666;
+    transition: all 0.25s ease;
+    font-family: inherit;
+}
+
+.category-btn:hover {
+    border-color: #FFD77A;
+    color: #1a1a1a;
+}
+
+.category-btn.active {
+    border-color: #FFBF00;
+    background: #FFF8E1;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+.category-time {
+    font-size: 0.72rem;
+    margin-top: 4px;
+    opacity: 0.7;
+    font-weight: 400;
+}
+
+/* Menu Grid */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.menu-loading,
+.menu-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: #999;
+    font-size: 1rem;
+}
+
+/* Menu Card */
+.menu-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #ede8dc;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Card Image */
+.menu-card-img {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.menu-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.menu-card:hover .menu-card-img img {
+    transform: scale(1.04);
+}
+
+/* Badge */
+.menu-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    white-space: nowrap;
+}
+
+/* Card Details */
+.menu-details {
+    padding: 18px 20px 20px;
+}
+
+.menu-details h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.menu-details p {
+    color: #888;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    min-height: 38px;
+}
+
+.price {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #FFBF00;
+    margin-bottom: 14px;
+}
+
+/* Order Buttons */
+.menu-card-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.order-btn {
+    flex: 1;
+    padding: 9px 10px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s ease;
+}
+
+.order-btn.uber {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+.order-btn.uber:hover {
+    background: #333;
+}
+
+.order-btn.pickme {
+    background: #FFD77A;
+    color: #1a1a1a;
+}
+
+.order-btn.pickme:hover {
+    background: #FFBF00;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-tabs {
+        gap: 8px;
+    }
+
+    .category-btn {
+        font-size: 0.82rem;
+        padding: 8px 14px;
+    }
+}

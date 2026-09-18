@@ -1,0 +1,222 @@
+.contact-section {
+    padding: 100px 0;
+    background: #FFF9EE;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-section::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 360px;
+    height: 360px;
+    background: radial-gradient(circle, rgba(255, 215, 122, 0.18) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Left Side */
+.contact-eyebrow {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #FFBF00;
+    margin-bottom: 12px;
+}
+
+.contact-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+
+.contact-desc {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 40px;
+    line-height: 1.7;
+}
+
+/* Info Items */
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 40px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 20px;
+    background: #fff;
+    border-radius: 14px;
+    border: 1.5px solid #e8e0c8;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: all 0.25s ease;
+}
+
+.info-item:hover {
+    border-color: #FFD77A;
+    box-shadow: 0 6px 24px rgba(255, 191, 0, 0.15);
+    transform: translateX(4px);
+}
+
+.info-icon {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+    background: #FFF8E1;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFBF00;
+}
+
+.info-text h4 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 3px;
+}
+
+.info-text p {
+    font-size: 0.97rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+/* Order Actions */
+.order-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #999;
+    margin-bottom: 14px;
+}
+
+.partners {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.partner-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    border: none;
+    font-family: inherit;
+}
+
+.partner-btn.uber {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+.partner-btn.uber:hover {
+    background: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.partner-btn.pickme {
+    background: #FFD77A;
+    color: #1a1a1a;
+}
+
+.partner-btn.pickme:hover {
+    background: #FFBF00;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 191, 0, 0.3);
+}
+
+/* Map Placeholder */
+.contact-map {
+    border-radius: 20px;
+    overflow: hidden;
+    height: 420px;
+    background: #fff;
+    border: 1px solid #f0ece0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    text-align: center;
+    padding: 40px;
+}
+
+.map-placeholder p {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.map-placeholder span {
+    font-size: 0.9rem;
+    color: #888;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-map {
+        height: 300px;
+    }
+
+    .contact-title {
+        font-size: 1.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-section {
+        padding: 70px 0;
+    }
+
+    .partner-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .partners {
+        flex-direction: column;
+    }
+}
