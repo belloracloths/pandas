@@ -2,7 +2,6 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Extras from '../components/Extras';
-import Popup from '../components/Popup';
 import { MenuCategory } from '../components/MenuSections';
 import { sectionsData } from '../lib/constants';
 import SpecialOffer from '../components/SpecialOffer';
@@ -18,7 +17,6 @@ const Home = () => {
 
     return (
         <div className="home-page">
-            <Popup />
             <Navbar />
             <Hero />
 

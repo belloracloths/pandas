@@ -53,20 +53,19 @@ const Hero = () => {
                     <div className="hero-text">
                         <span className="hero-eyebrow">Fresh &amp; Homemade Daily</span>
                         <h1 className="hero-heading">
-                            Crafting <span>Timeless</span><br />
-                            Flavors, One<br />
+                            Crafting Timeless <br />
+                            Flavors, One <br />
                             Bite at a Time
                         </h1>
                         <p className="hero-desc">
-                            Every burger patty is hand-pressed, every sauce crafted in-house.
-                            Zero artificial flavors — just pure, honest goodness.
+                            Every burger is made with care, every sauce crafted in-house. Zero artificial flavors. Just delicious, honest goodness.
                         </p>
                         <div className="hero-actions">
-                            <button className="btn-primary" onClick={() => window.open(uberLink, '_blank')}>
-                                Order on Uber Eats
+                            <button className="hero-partner-btn uber" onClick={() => window.open(uberLink, '_blank')} aria-label="Order on Uber Eats">
+                                <img src="/assets/uber.png" alt="Order on Uber Eats" />
                             </button>
-                            <button className="btn-outline" onClick={() => window.open(pickMeLink, '_blank')}>
-                                Order on PickMe
+                            <button className="hero-partner-btn pickme" onClick={() => window.open(pickMeLink, '_blank')} aria-label="Order on PickMe Food">
+                                <img src="/assets/pick_me.png" alt="Order on PickMe Food" />
                             </button>
                         </div>
                         <div className="hero-stats">

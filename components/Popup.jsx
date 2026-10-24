@@ -3,21 +3,8 @@ import React, { useState, useEffect } from 'react';
 import './Popup.css';
 
 const Popup = () => {
-    const [isVisible, setIsVisible] = useState(false);
-
-    useEffect(() => {
-        // Show popup immediately every time
-        const timer = setTimeout(() => {
-            setIsVisible(true);
-        }, 0);
-        return () => clearTimeout(timer);
-    }, []);
-
-    const closePopup = () => {
-        setIsVisible(false);
-    };
-
-    if (!isVisible) return null;
+    return null;
+};
 
     return (
         <div className="popup-overlay">
