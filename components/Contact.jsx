@@ -23,18 +23,7 @@ const MailIcon = () => (
     </svg>
 );
 
-const UberIcon = () => (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 4a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm0 14.2a7.2 7.2 0 0 1-6-3.22c.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08A7.2 7.2 0 0 1 12 20.2z" />
-    </svg>
-);
 
-const PickmeIcon = () => (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-        <circle cx="12" cy="10" r="3" />
-    </svg>
-);
 
 const Contact = () => {
     const [contact, setContact] = useState({
@@ -103,16 +92,16 @@ const Contact = () => {
                             <button
                                 className="partner-btn uber"
                                 onClick={() => window.open('https://www.ubereats.com', '_blank')}
+                                aria-label="Order on Uber Eats"
                             >
-                                <UberIcon />
-                                Uber Eats
+                                <img src="/assets/uber.png" alt="Uber Eats" />
                             </button>
                             <button
                                 className="partner-btn pickme"
                                 onClick={() => window.open('https://pickme.lk/food', '_blank')}
+                                aria-label="Order on PickMe Food"
                             >
-                                <PickmeIcon />
-                                PickMe Food
+                                <img src="/assets/pick_me.png" alt="PickMe Food" />
                             </button>
                         </div>
                     </div>
